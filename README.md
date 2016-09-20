@@ -1,2 +1,2 @@
 # react-project
-a project to learn react
+a project to learn react.
