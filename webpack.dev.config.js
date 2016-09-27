@@ -5,8 +5,8 @@ config.devtool = '#source-map'
 config.devServer = {
   noInfo: true,
   proxy: {
-    '/api/*': {
-      target: 'http://139.196.87.99/mkj', // 测试环境
+    '/api/v1/*': {
+      target: 'https://cnodejs.org', // 测试环境
       secure: false
     }
   }

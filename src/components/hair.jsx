@@ -11,11 +11,12 @@ export default class Hair extends React.Component {
   }
   getPopularList() {
     $.ajax({
-      url: '/api/hairstyle/popularList',
+      url: '/api/v1/topics',
+      data: {page: 1, tab: 'all', limit: 20},
       dataType: 'json',
       success: (data) => {
         this.setState({
-          items: data.result.result
+          items: data.data
         })
       }
     })
