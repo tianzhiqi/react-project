@@ -1,7 +1,7 @@
 import React from 'react'
-import HairItem from './hairItem.jsx'
+import TopicItem from './topicItem.jsx'
 
-export default class Hair extends React.Component {
+export default class Topic extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -25,14 +25,14 @@ export default class Hair extends React.Component {
     this.getPopularList()
   }
   render() {
-    const hairItem = this.state.items.map((item, index) => {
+    const topicItem = this.state.items.map((item, index) => {
       return (
-        <HairItem item={item} key={index} />
+        <TopicItem item={item} key={index} />
         )
     })
     return (
-    <div className="hair-list">
-      {hairItem}
+    <div className="topic-list">
+      {topicItem}
     </div>
     )
   }

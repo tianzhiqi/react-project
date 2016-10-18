@@ -38,5 +38,8 @@
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1",
     "webpack-zepto": "0.0.1"
+  },
+  "dependencies": {
+    "react-router": "^2.8.1"
   }
 }
