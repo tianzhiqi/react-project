@@ -7,7 +7,6 @@ export default class TopicItem extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      imageDomain: 'http://meimeidou.qiniudn.com/'
     }
   }
   fromNow (time) {

@@ -1,0 +1,15 @@
+.topic-content {
+  padding: 5px;
+}
+.topic-full-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.topic-content .topic-changes {
+  font-size: 1.2rem;
+  color: #838383;
+  overflow: hidden;
+}
+.topic-content .topic-changes span::before {
+  content: '•';
+}
