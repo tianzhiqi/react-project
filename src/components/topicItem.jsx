@@ -34,9 +34,9 @@ export default class TopicItem extends React.Component {
     }
     return (
       <div className="topic-item">
-        <a className="user-avatar pull-l">
+        <Link className="user-avatar pull-l" to={`/user/${this.props.item.author.loginname}`}>
           <img src={this.props.item.author.avatar_url} title={this.props.item.author.loginname} />
-        </a>
+        </Link>
         <span className="reply-count">
           <span className="count-of-reply" title="回复数">{this.props.item.reply_count}</span>
           <span className="count-split">/</span>

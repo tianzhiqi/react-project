@@ -1,0 +1,22 @@
+.user-header {
+  background: #10c577;
+}
+.user-pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+.user-pic img {
+  width: 60px;
+  border-radius: 50%;
+}
+.user-name {
+  text-align: center;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.user-other-info {
+  padding: 10px;
+}

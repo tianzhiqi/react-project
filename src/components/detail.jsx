@@ -1,6 +1,7 @@
 import React from 'react'
 import 'github-markdown-css'
 import '../assets/css/detail.css'
+import Reply from './reply.jsx'
 
 export default class Detail extends React.Component {
   constructor(props) {
@@ -38,6 +39,11 @@ export default class Detail extends React.Component {
     this.getDetail()
   }
   render() {
+    const reply = this.state.detail && this.state.detail.replies.map((item, index) => {
+      return (
+        <Reply item={item} key={index} floor={index} />
+      )
+    })
     return (
       <div className="topic-content">
         <div className="topic-header">
@@ -51,6 +57,12 @@ export default class Detail extends React.Component {
         </div>
         <div className="inner-topic">
           <div className="markdown-body" dangerouslySetInnerHTML={{__html: this.state.detail.content}} />
+        </div>
+        <div className="reply-list">
+          <div className="reply-content-header">
+            <span className="reply-total-num">{this.state.detail.reply_count} 回复</span>
+          </div>
+          {reply}
         </div>
       </div>
     )

@@ -51,6 +51,11 @@ textarea {
   color: #333333;
 }
 a {
+  color: #08c;
+  text-decoration: none;
+}
+a.dark {
+  color: #666;
   text-decoration: none;
 }
 select {

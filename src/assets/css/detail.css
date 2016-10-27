@@ -13,3 +13,43 @@
 .topic-content .topic-changes span::before {
   content: '•';
 }
+.reply-content-header {
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-radius: 3px 3px 0 0;
+}
+.reply-content-header .reply-total-num {
+  color: #444;
+  font-size: 1.4rem;
+}
+.author-content .user-avatar {
+  float: left;
+}
+.user-avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+}
+.reply-item {
+  position: relative;
+  padding: 10px;
+  background: #fff;
+  border-top: 1px solid #f0f0f0;
+}
+.reply-item .user-info {
+  display: inline-block;
+  margin-left: 10px;
+}
+.user-info .reply-author {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.reply-content {
+  color: #333;
+  padding-top: 5px;
+  font-size: 1.4rem;
+  clear: both;
+}
+.reply-time {
+  font-size: 1.1rem;
+}
