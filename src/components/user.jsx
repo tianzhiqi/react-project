@@ -1,5 +1,7 @@
 import React from 'react'
 import '../assets/css/user.css'
+import TabSet from './tabset.jsx'
+import Tab from './tab.jsx'
 
 export default class User extends React.Component {
   constructor(props) {
@@ -36,6 +38,12 @@ export default class User extends React.Component {
             <span className="pull-l">注册时间: {this.state.user.create_at}</span>
             <span className="pull-r">积分: {this.state.user.score}</span>
           </div>
+        </div>
+        <div className="user-recent">
+          <TabSet defaultActiveKey="1">
+            <Tab tab="tab1" key="1">content</Tab>
+            <Tab tab="tab2" key="2">content1</Tab>
+          </TabSet>
         </div>
       </div>
     )
