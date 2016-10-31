@@ -2,6 +2,7 @@ import React from 'react'
 import '../assets/css/user.css'
 import TabSet from './tabset.jsx'
 import Tab from './tab.jsx'
+import UserTopic from './userTopic.jsx'
 
 export default class User extends React.Component {
   constructor(props) {
@@ -27,6 +28,16 @@ export default class User extends React.Component {
     this.getUserDetail()
   }
   render() {
+    const recentReplies = this.state.user && this.state.user.recent_replies.map((item, index) => {
+      return (
+        <UserTopic item={item} key={index} />
+      )
+    })
+    const recentTopics = this.state.user && this.state.user.recent_topics.map((item, index) => {
+      return (
+        <UserTopic item={item} key={index} />
+      )
+    })
     return (
       <div className="user-container">
         <div className="user-header">
@@ -39,10 +50,10 @@ export default class User extends React.Component {
             <span className="pull-r">积分: {this.state.user.score}</span>
           </div>
         </div>
-        <div className="user-recent">
+        <div className="recent-changes">
           <TabSet defaultActiveKey="1">
-            <Tab tab="tab1" key="1">content</Tab>
-            <Tab tab="tab2" key="2">content1</Tab>
+            <Tab tab="最近创建的话题" key="1">{recentReplies}</Tab>
+            <Tab tab="最近参与的话题" key="2">{recentTopics}</Tab>
           </TabSet>
         </div>
       </div>

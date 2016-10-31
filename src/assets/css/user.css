@@ -20,3 +20,18 @@
 .user-other-info {
   padding: 10px;
 }
+.user-recent {
+  padding: 5px 10px;
+  font-size: 1.4rem;
+  display: flex;
+}
+.user-recent .recent-topic {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.user-recent .last-time {
+  color: #ff6172;
+  font-size: 1.2rem;
+}

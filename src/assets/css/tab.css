@@ -1,0 +1,37 @@
+.tabs-list {
+  position: relative;
+  box-sizing: border-box;
+}
+.tab-title {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #eaeaea;
+  box-sizing: border-box;
+}
+.tab-title>div {
+  position: relative;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.tab-title>div::before {
+  content: '';
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #ff7162;
+}
+.tab-title>div.tab-active::before {
+  display: block;
+}
+.tab-content>div {
+  display: none;
+}
+.tab-content>div.tab-content-active {
+  display: block;
+}
