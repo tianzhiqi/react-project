@@ -3,12 +3,16 @@ import '../assets/css/user.css'
 import TabSet from './tabset.jsx'
 import Tab from './tab.jsx'
 import UserTopic from './userTopic.jsx'
+import {formatDate} from '../js/utils.js'
 
 export default class User extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: ''
+      user: {
+        recent_replies: [],
+        recent_topics: []
+      }
     }
   }
   getUserDetail() {
@@ -24,7 +28,7 @@ export default class User extends React.Component {
       }
     })
   }
-  componentDidMount() {
+  componentWillMount() {
     this.getUserDetail()
   }
   render() {
@@ -46,7 +50,7 @@ export default class User extends React.Component {
           </div>
           <p className="user-name">{this.state.user.loginname}</p>
           <div className="user-other-info clearfix">
-            <span className="pull-l">注册时间: {this.state.user.create_at}</span>
+            <span className="pull-l">注册时间: {formatDate(new Date(this.state.user.create_at), 'yyyy-MM-dd')}</span>
             <span className="pull-r">积分: {this.state.user.score}</span>
           </div>
         </div>

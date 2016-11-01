@@ -1,5 +1,5 @@
 .user-header {
-  background: #10c577;
+  background: #4285f4;
 }
 .user-pic {
   display: flex;
@@ -19,6 +19,8 @@
 }
 .user-other-info {
   padding: 10px;
+  color: #fff;
+  font-size: 1.2rem;
 }
 .user-recent {
   padding: 5px 10px;
