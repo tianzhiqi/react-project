@@ -7,7 +7,9 @@ export default class Detail extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      detail: ''
+      detail: {
+        replies: []
+      }
     }
   }
   fromNow (time) {
@@ -35,11 +37,11 @@ export default class Detail extends React.Component {
       }
     })
   }
-  componentDidMount() {
+  componentWillMount() {
     this.getDetail()
   }
   render() {
-    const reply = this.state.detail && this.state.detail.replies.map((item, index) => {
+    const reply = this.state.detail.replies.map((item, index) => {
       return (
         <Reply item={item} key={index} floor={index} />
       )

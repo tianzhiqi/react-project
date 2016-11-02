@@ -1,5 +1,6 @@
 import React from 'react'
 import TopicItem from './topicItem.jsx'
+import Header from './header.jsx'
 
 export default class Topic extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ export default class Topic extends React.Component {
       }
     })
   }
-  componentDidMount() {
+  componentWillMount() {
     this.getPopularList()
   }
   render() {
@@ -30,9 +31,12 @@ export default class Topic extends React.Component {
         )
     })
     return (
-    <div className="topic-list">
-      {topicItem}
-    </div>
+      <div className="main">
+        <Header />
+        <div className="topic-list">
+          {topicItem}
+        </div>
+      </div>
     )
   }
 }

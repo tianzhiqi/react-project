@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'main.js',
-    publicPath: 'http://localhost:8080/dist/' 
+    publicPath: 'http://localhost:8080/dist/'
   },
   resolve: {
     extentsions: ['', '.js']
@@ -34,6 +34,10 @@ module.exports = {
       loader: ExtractTextPlugin.extract("style-loader", "css-loader")
     },
     {
+      test: /\.scss$/,
+      loaders: ["style", "css", "sass"]
+    },
+    {
       test: /\.(png|jpg|gif)$/,
       loader: 'url',
       query: {
@@ -51,4 +55,3 @@ module.exports = {
     })
   ]
 }
-
