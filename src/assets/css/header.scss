@@ -9,4 +9,21 @@ header {
     display: inline-block;
     margin-left: 10px;
   }
+  .site-nav {
+    padding: 7px 5px;
+    line-height: initial;
+  }
+  button {
+    background: #fff;
+  }
+  .btn-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #555;
+    border-radius: 1px;
+  }
+  .btn-bar+.btn-bar {
+    margin-top: 4px;
+  }
 }
