@@ -1,8 +1,9 @@
 header {
-  height: 32px;
-  line-height: 32px;
+  height: 40px;
+  line-height: 40px;
   padding: 0 10px;
   border-bottom: 1px solid #f5f5f5;
+  background: #333;
   a {
     font-size: 1.4rem;
     color: #333;
@@ -10,17 +11,24 @@ header {
     margin-left: 10px;
   }
   .site-nav {
-    padding: 7px 5px;
+    display: inline-flex;
+    height: 100%;
     line-height: initial;
+    align-items: center;
+    .current-title {
+      color: #fff;
+      font-size: 1.4rem;
+    }
   }
   button {
-    background: #fff;
+    background: #333;
+    padding: 9px;
   }
   .btn-bar {
     display: block;
     width: 22px;
     height: 2px;
-    background: #555;
+    background: #fff;
     border-radius: 1px;
   }
   .btn-bar+.btn-bar {

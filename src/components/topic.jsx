@@ -6,7 +6,8 @@ export default class Topic extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      items: []
+      items: [],
+      tab: 'all'
     }
   }
   getPopularList() {
@@ -32,7 +33,7 @@ export default class Topic extends React.Component {
     })
     return (
       <div className="main">
-        <Header />
+        <Header title={'全部'} />
         <div className="topic-list">
           {topicItem}
         </div>
