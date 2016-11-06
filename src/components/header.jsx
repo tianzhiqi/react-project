@@ -1,5 +1,7 @@
 import React from 'react'
 import '../assets/css/header.scss'
+import back from '../assets/img/Koala.jpg'
+import defaultAvatar from '../assets/img/center-avatar.png'
 
 export default class Header extends React.Component {
   render() {
@@ -17,10 +19,10 @@ export default class Header extends React.Component {
           <div>
             <div className="user-view">
               <div className="user-background">
-                <img src="../assets/img/avatar.png" />
+                <img src={back} />
               </div>
-              <a><img src="../assets/img/center-avatar.png" /></a>
-              <a>David</a>
+              <a className="side-user-avatar"><img src={defaultAvatar} /></a>
+              <a className="side-user-name">David</a>
             </div>
             <div className="side-nav-list">
               <a>全部</a>
