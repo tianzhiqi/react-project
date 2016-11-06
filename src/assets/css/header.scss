@@ -34,4 +34,38 @@ header {
   .btn-bar+.btn-bar {
     margin-top: 4px;
   }
+  .side-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    background: #fff;
+    z-index: 2;
+    transition: transform .3s ease-out;
+    will-change: transform;
+    transform: translateX(0%);
+    display: none;
+    &>div {
+      width: 256px;
+      font-weight: 300;
+    }
+    .user-view {
+      background: #03a9f4;
+      color: #fff;
+      font-size: 1.5rem;
+      padding: 16px;
+    }
+    .side-nav-list {
+      padding: 16px;
+      &>a {
+        display: block;
+        color: rgba(0,0,0,0.87);
+        font-size: 1.4rem;
+        font-weight: 500;
+        height: 48px;
+        line-height: 48px;
+      }
+    }
+  }
 }
