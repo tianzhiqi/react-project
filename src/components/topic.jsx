@@ -7,7 +7,8 @@ export default class Topic extends React.Component {
     super(props)
     this.state = {
       items: [],
-      tab: 'all'
+      tab: 'all',
+      sidebarOpen: false
     }
   }
   getPopularList() {
@@ -33,7 +34,7 @@ export default class Topic extends React.Component {
     })
     return (
       <div className="main">
-        <Header title={'全部'} />
+        <Header title={'全部'} open={this.state.sidebarOpen} />
         <div className="topic-list">
           {topicItem}
         </div>
