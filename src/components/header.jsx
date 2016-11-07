@@ -8,6 +8,7 @@ export default class Header extends React.Component {
     super(props)
 
     this.overlayClicked = this.overlayClicked.bind(this)
+    this.menuClicked = this.menuClicked.bind(this)
     // this.onTouchStart = this.onTouchStart.bind(this)
     // this.onTouchMove = this.onTouchMove.bind(this)
     // this.onTouchEnd = this.onTouchEnd.bind(this)
@@ -48,10 +49,23 @@ export default class Header extends React.Component {
       this.props.onSetOpen(false)
     }
   }
+  menuClicked() {
+    if (!this.props.open) {
+      this.props.onSetOpen(true)
+    }
+  }
   render() {
+    const overlayStyle = {}
+    const sidebarStyle = {}
+    if (this.props.open) {
+      overlayStyle.opacity = 1
+      overlayStyle.visibility = 'visible'
+      sidebarStyle.transform = 'translateX(0%)'
+      sidebarStyle.WebkitTransform = 'translateX(0%)'
+    }
     return (
       <header>
-        <div className="site-nav">
+        <div className="site-nav" onClick={this.menuClicked}>
           <button>
             <span className="btn-bar" />
             <span className="btn-bar" />
@@ -59,7 +73,7 @@ export default class Header extends React.Component {
           </button>
           <span className="current-title">{this.props.title}</span>
         </div>
-        <div className="side-nav">
+        <div className="side-nav" style={sidebarStyle}>
           <div>
             <div className="user-view">
               <div className="user-background">
@@ -77,7 +91,7 @@ export default class Header extends React.Component {
             </div>
           </div>
         </div>
-        <div className="overlay" onClick={this.overlayClicked} />
+        <div className="overlay" onClick={this.overlayClicked} style={overlayStyle} />
       </header>
     )
   }

@@ -10,6 +10,7 @@ export default class Topic extends React.Component {
       tab: 'all',
       sidebarOpen: false
     }
+    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this)
   }
   getPopularList() {
     $.ajax({
@@ -23,6 +24,11 @@ export default class Topic extends React.Component {
       }
     })
   }
+  onSetSidebarOpen(open) {
+    this.setState({
+      sidebarOpen: open
+    })
+  }
   componentWillMount() {
     this.getPopularList()
   }
@@ -34,7 +40,7 @@ export default class Topic extends React.Component {
     })
     return (
       <div className="main">
-        <Header title={'全部'} open={this.state.sidebarOpen} />
+        <Header title={'全部'} open={this.state.sidebarOpen} onSetOpen={this.onSetSidebarOpen} />
         <div className="topic-list">
           {topicItem}
         </div>
