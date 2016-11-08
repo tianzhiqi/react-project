@@ -7,7 +7,11 @@ export default class Topic extends React.Component {
     super(props)
     this.state = {
       items: [],
-      tab: 'all',
+      searchParams: {
+        tab: 'all',
+        page: 1,
+        limit: 20
+      },
       sidebarOpen: false
     }
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this)
@@ -15,7 +19,7 @@ export default class Topic extends React.Component {
   getPopularList() {
     $.ajax({
       url: '/api/v1/topics',
-      data: {page: 1, tab: 'all', limit: 20},
+      data: this.state.searchParams,
       dataType: 'json',
       success: (data) => {
         this.setState({
@@ -30,6 +34,11 @@ export default class Topic extends React.Component {
     })
   }
   componentWillMount() {
+    if (this.props.location.query && this.props.location.query.tab) {
+      this.setState({
+        tab: this.props.location.query.tab
+      })
+    }
     this.getPopularList()
   }
   render() {

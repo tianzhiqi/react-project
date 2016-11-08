@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router'
 import '../assets/css/header.scss'
 import back from '../assets/img/Koala.jpg'
 import defaultAvatar from '../assets/img/center-avatar.png'
@@ -83,11 +84,11 @@ export default class Header extends React.Component {
               <a className="side-user-name">David</a>
             </div>
             <div className="side-nav-list">
-              <a>全部</a>
-              <a>精华</a>
-              <a>问答</a>
-              <a>分享</a>
-              <a>招聘</a>
+              <Link to={{pathname: '/', query: {tab: 'all'}}}>全部</Link>
+              <Link to={{pathname: '/', query: {tab: 'good'}}}>精华</Link>
+              <Link to={{pathname: '/', query: {tab: 'ask'}}}>问答</Link>
+              <Link to={{pathname: '/', query: {tab: 'share'}}}>分享</Link>
+              <Link to={{pathname: '/', query: {tab: 'job'}}}>招聘</Link>
             </div>
           </div>
         </div>
