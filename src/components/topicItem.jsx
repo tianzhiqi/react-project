@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router'
 import '../assets/css/list.css'
-
+import {getTabInfo} from '../js/utils.js'
 
 export default class TopicItem extends React.Component {
   constructor(props) {
@@ -22,16 +22,6 @@ export default class TopicItem extends React.Component {
     return time + label + '前'
   }
   render() {
-    let topicCat
-    if (this.props.item.top) {
-      topicCat = <span className="put-top">置顶</span>
-    } else if (this.props.item.tab === 'job') {
-      topicCat = <span className="topic-tab">招聘</span>
-    } else if (this.props.item.tab === 'share') {
-      topicCat = <span className="topic-tab">分享</span>
-    } else if (this.props.item.tab === 'ask') {
-      topicCat = <span className="topic-tab">问答</span>
-    }
     return (
       <div className="topic-item">
         <Link className="user-avatar pull-l" to={`/user/${this.props.item.author.loginname}`}>
@@ -43,7 +33,7 @@ export default class TopicItem extends React.Component {
           <span className="count-of-click" title="点击数">{this.props.item.visit_count}</span>
         </span>
         <div className="topic-title-wrapper">
-          {topicCat}
+          <span className={getTabInfo(this.props.item.tab, this.props.item.good, this.props.item.top, true)}>{getTabInfo(this.props.item.tab, this.props.item.good, this.props.item.top, false)}</span>
           <Link className="topic-title" to={`/topic/${this.props.item.id}`} title={this.props.item.title}>{this.props.item.title}</Link>
         </div>
         <a className="last-time pull-r">

@@ -35,9 +35,9 @@ export default class Topic extends React.Component {
   }
   componentWillMount() {
     if (this.props.location.query && this.props.location.query.tab) {
-      this.setState({
-        tab: this.props.location.query.tab
-      })
+      const newState = {...this.state}
+      newState.searchParams.tab = this.props.location.query.tab
+      this.setState(newState)
     }
     this.getPopularList()
   }

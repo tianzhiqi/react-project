@@ -239,17 +239,24 @@ img {
   padding-left: 40px;
   line-height: 30px;
 }
-.put-top {
-  background: #eb5424;
+.topic-title-wrapper>span {
   color: #fff;
   padding: 2px 4px;
   font-size: 1.2rem;
   border-radius: 3px;
 }
-.topic-tab {
-  background: #e5e5e5;
-  color: #999;
-  padding: 2px 4px;
-  border-radius: 3px;
-  font-size: 1.2rem;
+.top {
+  background: #eb5424;
+}
+.good {
+    background: #6b15a1;
+}
+.ask {
+  background: #337ab7;
+}
+.share {
+  background: #5cb85c;
+}
+.job {
+  background: #5bc0de;
 }
