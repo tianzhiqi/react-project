@@ -33,6 +33,27 @@ export default class Topic extends React.Component {
       sidebarOpen: open
     })
   }
+  getHeaderTitle(tab) {
+    let str = ''
+    switch (tab) {
+      case 'share':
+        str = '分享'
+        break
+      case 'ask':
+        str = '问答'
+        break
+      case 'job':
+        str = '招聘'
+        break
+      case 'good':
+        str = '精华'
+        break
+      default:
+        str = '全部'
+        break
+    }
+    return str
+  }
   componentWillMount() {
     if (this.props.location.query && this.props.location.query.tab) {
       const newState = {...this.state}
@@ -40,6 +61,15 @@ export default class Topic extends React.Component {
       this.setState(newState)
     }
     this.getPopularList()
+  }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.location.query.tab !== nextProps.location.query.tab) {
+      const newState = {...this.state}
+      newState.searchParams.tab = nextProps.location.query.tab
+      newState.sidebarOpen = false
+      this.setState(newState)
+      this.getPopularList()
+    }
   }
   render() {
     const topicItem = this.state.items.map((item, index) => {
@@ -49,7 +79,7 @@ export default class Topic extends React.Component {
     })
     return (
       <div className="main">
-        <Header title={'全部'} open={this.state.sidebarOpen} onSetOpen={this.onSetSidebarOpen} />
+        <Header title={this.getHeaderTitle(this.state.searchParams.tab)} open={this.state.sidebarOpen} onSetOpen={this.onSetSidebarOpen} />
         <div className="topic-list">
           {topicItem}
         </div>
